@@ -118,6 +118,27 @@ const init = async () => {
         fuction_parent_id: new ObjectId("667463d04bede188dfb46d7a"),
         name: "Báo cáo công trình",
       },
+
+      // loại dịch vụ
+      {
+        _id: new ObjectId("667463d04bede188dfb4610a"),
+        name: "Loại dịch vụ",
+      },
+      {
+        _id: new ObjectId("667463d04bede188dfb46d79"),
+        fuction_parent_id: new ObjectId("667463d04bede188dfb4610a"),
+        name: "Tạo loại dịch vụ",
+    },
+    {
+        _id: new ObjectId("667463d04bede188dfb46d80"),
+        fuction_parent_id: new ObjectId("667463d04bede188dfb4610a"),
+        name: "Sửa loại dịch vụ",
+    },
+    {
+        _id: new ObjectId("667463d04bede188dfb46d81"),
+        fuction_parent_id: new ObjectId("667463d04bede188dfb4610a"),
+        name: "Xóa loại dịch vụ",
+    },
     ]
     await Functions.insertMany(array)
   }

@@ -107,6 +107,23 @@ const init = async () => {
         function_id: new ObjectId("667463d04bede188dfb46d7f"),
         group_user_id: new ObjectId("6684196550a34692df218d8d"),
       },
+
+      // loại dịch vụ
+      {
+        _id: new ObjectId("668653c9e55c5173ec41c82d"),
+        function_id: new ObjectId("667463d04bede188dfb46d79"),
+        group_user_id: new ObjectId("6684196550a34692df218d8d"),
+      },
+      {
+        _id: new ObjectId("668653c9e55c5173ec41c93f"),
+        function_id: new ObjectId("667463d04bede188dfb46d80"),
+        group_user_id: new ObjectId("6684196550a34692df218d8d"),
+      },
+      {
+        _id: new ObjectId("668653c9e55c5173ec41d931"),
+        function_id: new ObjectId("667463d04bede188dfb46d81"),
+        group_user_id: new ObjectId("6684196550a34692df218d8d"),
+      },
     ];
     await Roles.insertMany(array);
   }

@@ -22,6 +22,9 @@ const functionRoutes = require("./routes/roles/functions");
 const userRoutes = require("./routes/users/user");
 const groupUserRoutes = require("./routes/group-user/group-user");
 
+// loại dịch vụ
+const planServicesRoutes = require("./routes/plan-services/plan-services");
+
 dotenv.config();
 
 app.use(bodyParser.json({limit: "500mb"}));
@@ -54,6 +57,9 @@ app.use("/functions", check_token_api, functionRoutes);
 // users
 app.use("/users", check_token_api, userRoutes);
 app.use("/group-user", check_token_api, groupUserRoutes);
+
+// loại dịch vụ
+app.use("/plan-services", check_token_api, planServicesRoutes);
 
 const PORT = process.env.PORT || 3123;
 app.listen(PORT, () => {console.log(`Server đang chạy... ${PORT}`);});
