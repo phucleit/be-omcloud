@@ -28,6 +28,9 @@ const planServicesRoutes = require("./routes/plan-services/plan-services");
 // dịch vụ
 const servicesRoutes = require("./routes/services/services");
 
+// kỳ bảo trì
+const maintenancePeriodRoutes = require("./routes/maintenance-period/maintenance-period");
+
 dotenv.config();
 
 app.use(bodyParser.json({limit: "500mb"}));
@@ -66,6 +69,9 @@ app.use("/plan-services", check_token_api, planServicesRoutes);
 
 // dịch vụ
 app.use("/services", check_token_api, servicesRoutes);
+
+// kỳ bảo trì
+app.use("/maintenance-period", check_token_api, maintenancePeriodRoutes);
 
 const PORT = process.env.PORT || 3123;
 app.listen(PORT, () => {console.log(`Server đang chạy... ${PORT}`);});
