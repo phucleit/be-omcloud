@@ -128,17 +128,38 @@ const init = async () => {
         _id: new ObjectId("667463d04bede188dfb46d79"),
         fuction_parent_id: new ObjectId("667463d04bede188dfb4610a"),
         name: "Tạo loại dịch vụ",
-    },
-    {
+      },
+      {
         _id: new ObjectId("667463d04bede188dfb46d80"),
         fuction_parent_id: new ObjectId("667463d04bede188dfb4610a"),
         name: "Sửa loại dịch vụ",
-    },
-    {
+      },
+      {
         _id: new ObjectId("667463d04bede188dfb46d81"),
         fuction_parent_id: new ObjectId("667463d04bede188dfb4610a"),
         name: "Xóa loại dịch vụ",
-    },
+      },
+
+      // dịch vụ
+      {
+        _id: new ObjectId("667464b5500bf3ad04c24f47"),
+        name: "Dịch vụ",
+      },
+      {
+        _id: new ObjectId("66746678f7f723b779b1b05f"),
+        fuction_parent_id: new ObjectId("667464b5500bf3ad04c24f47"),
+        name: "Tạo dịch vụ",
+      },
+      {
+        _id: new ObjectId("66746678f7f723b779b1b060"),
+        fuction_parent_id: new ObjectId("667464b5500bf3ad04c24f47"),
+        name: "Sửa dịch vụ",
+      },
+      {
+        _id: new ObjectId("66746678f7f723b779b1b061"),
+        fuction_parent_id: new ObjectId("667464b5500bf3ad04c24f47"),
+        name: "Xóa dịch vụ",
+      },
     ]
     await Functions.insertMany(array)
   }

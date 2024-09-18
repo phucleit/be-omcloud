@@ -25,6 +25,9 @@ const groupUserRoutes = require("./routes/group-user/group-user");
 // loại dịch vụ
 const planServicesRoutes = require("./routes/plan-services/plan-services");
 
+// dịch vụ
+const servicesRoutes = require("./routes/services/services");
+
 dotenv.config();
 
 app.use(bodyParser.json({limit: "500mb"}));
@@ -60,6 +63,9 @@ app.use("/group-user", check_token_api, groupUserRoutes);
 
 // loại dịch vụ
 app.use("/plan-services", check_token_api, planServicesRoutes);
+
+// dịch vụ
+app.use("/services", check_token_api, servicesRoutes);
 
 const PORT = process.env.PORT || 3123;
 app.listen(PORT, () => {console.log(`Server đang chạy... ${PORT}`);});
