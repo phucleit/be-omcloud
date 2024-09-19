@@ -141,6 +141,23 @@ const init = async () => {
         function_id: new ObjectId("66746678f7f723b779b1b061"),
         group_user_id: new ObjectId("6684196550a34692df218d8d"),
       },
+  
+      // trạng thái
+      {
+        _id: new ObjectId("668653c9e55c5173ec41c97d"),
+        function_id: new ObjectId("667467eb263fb998b9925d3a"),
+        group_user_id: new ObjectId("6684196550a34692df218d8d"),
+      },
+      {
+        _id: new ObjectId("668653c9e55c5173ec41c97f"),
+        function_id: new ObjectId("667467eb263fb998b9925d3b"),
+        group_user_id: new ObjectId("6684196550a34692df218d8d"),
+      },
+      {
+        _id: new ObjectId("668653c9e55c5173ec41c981"),
+        function_id: new ObjectId("667467eb263fb998b9925d3c"),
+        group_user_id: new ObjectId("6684196550a34692df218d8d"),
+      },
     ];
     await Roles.insertMany(array);
   }
