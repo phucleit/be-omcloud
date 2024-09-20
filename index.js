@@ -34,6 +34,9 @@ const maintenancePeriodRoutes = require("./routes/maintenance-period/maintenance
 // trạng thái
 const statusRoutes = require("./routes/status/status");
 
+// công trình
+const projectsRoutes = require("./routes/projects/projects");
+
 dotenv.config();
 
 app.use(bodyParser.json({limit: "500mb"}));
@@ -78,6 +81,9 @@ app.use("/maintenance-period", check_token_api, maintenancePeriodRoutes);
 
 // trạng thái
 app.use("/status", check_token_api, statusRoutes);
+
+// công trình
+app.use("/projects", check_token_api, projectsRoutes);
 
 const PORT = process.env.PORT || 3123;
 app.listen(PORT, () => {console.log(`Server đang chạy... ${PORT}`);});
