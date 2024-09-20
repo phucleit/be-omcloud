@@ -158,6 +158,18 @@ const init = async () => {
         function_id: new ObjectId("667467eb263fb998b9925d3c"),
         group_user_id: new ObjectId("6684196550a34692df218d8d"),
       },
+
+      // báo cáo
+      {
+        _id: new ObjectId("667467eb263fb998b9925d42"),
+        function_id: new ObjectId("667467eb263fb998b9925d47"),
+        group_user_id: new ObjectId("6684196550a34692df218d8d"),
+      },
+      {
+        _id: new ObjectId("667467eb263fb998b9925d43"),
+        function_id: new ObjectId("667467eb263fb998b9925d48"),
+        group_user_id: new ObjectId("6684196550a34692df218d8d"),
+      },
     ];
     await Roles.insertMany(array);
   }
