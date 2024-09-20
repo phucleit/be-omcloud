@@ -38,7 +38,7 @@ const servicesController = {
     try {
       const services = await Services.findById(req.params.id);
       await services.updateOne({$set: req.body});
-      await logAction(req.auth._id, 'Dịch vụ', 'Cập nhật', `/dashboard/services/${req.params.id}`);
+      await logAction(req.auth._id, 'Dịch vụ', 'Cập nhật', `/dashboard/services/update-services/${req.params.id}`);
       return res.status(200).json("Cập nhật thành công!");
     } catch(err) {
       console.error(err);

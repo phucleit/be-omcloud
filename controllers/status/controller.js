@@ -38,7 +38,7 @@ const statusController = {
     try {
       const status = await Status.findById(req.params.id);
       await status.updateOne({$set: req.body});
-      await logAction(req.auth._id, 'Trạng thái', 'Cập nhật', `/dashboard/status/${req.params.id}`);
+      await logAction(req.auth._id, 'Trạng thái', 'Cập nhật', `/dashboard/status/update-status/${req.params.id}`);
       return res.status(200).json("Cập nhật thành công!");
     } catch(err) {
       console.error(err);

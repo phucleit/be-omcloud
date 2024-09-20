@@ -75,7 +75,7 @@ const ProjectsController = {
           { new: true }
         );
       }
-      await logAction(req.auth._id, 'Công trình', 'Cập nhật', `/dashboard/projects/${req.params.id}`);
+      await logAction(req.auth._id, 'Công trình', 'Cập nhật', `/dashboard/projects/update-projects/${req.params.id}`);
       return res.status(200).json("Cập nhật thành công!");
     } catch(err) {
       console.error(err);
