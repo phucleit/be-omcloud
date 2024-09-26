@@ -193,6 +193,11 @@ const init = async () => {
         name: "Tạo báo cáo",
       },
       {
+        _id: new ObjectId("667467eb263fb998b9925e43"),
+        fuction_parent_id: new ObjectId("667467eb263fb998b9925d46"),
+        name: "Xóa báo cáo",
+      },
+      {
         _id: new ObjectId("667467eb263fb998b9925d48"),
         fuction_parent_id: new ObjectId("667467eb263fb998b9925d46"),
         name: "Xuất báo cáo",

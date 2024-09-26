@@ -37,19 +37,22 @@ const statusRoutes = require("./routes/status/status");
 // công trình
 const projectsRoutes = require("./routes/projects/projects");
 
+// báo cáo
+const reportsRoutes = require("./routes/reports/reports");
+
 dotenv.config();
 
 app.use(bodyParser.json({limit: "500mb"}));
 app.use(bodyParser.urlencoded({extended:true, limit:'500mb'})); 
 
 const corsOptions = {
-	// origin: 'http://localhost:3056',
-  // methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
-  // credentials: true,
-	// optionsSuccessStatus: 200,
-  origin: 'https://om.himep.vn',
+	origin: 'http://localhost:3056',
+  methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
   credentials: true,
-  optionsSuccessStatus: 200,
+	optionsSuccessStatus: 200,
+  // origin: 'https://om.himep.vn',
+  // credentials: true,
+  // optionsSuccessStatus: 200,
 };
 
 app.use(cors(corsOptions));
@@ -84,6 +87,9 @@ app.use("/status", check_token_api, statusRoutes);
 
 // công trình
 app.use("/projects", check_token_api, projectsRoutes);
+
+// báo cáo
+app.use("/reports", check_token_api, reportsRoutes);
 
 const PORT = process.env.PORT || 3123;
 app.listen(PORT, () => {console.log(`Server đang chạy... ${PORT}`);});
