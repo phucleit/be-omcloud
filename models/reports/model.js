@@ -1,5 +1,11 @@
 const mongoose = require("mongoose");
 
+const taskSchema = new mongoose.Schema({
+  name: String,
+  image: String,
+  description: String
+});
+
 const reportschema = new mongoose.Schema({
   code: {
     type: String,
@@ -33,20 +39,7 @@ const reportschema = new mongoose.Schema({
     index: true,
     ref: "Projects",
   },
-  tasks: [{
-    name: {
-      type: String,
-      required: false
-    },
-    image: {
-      type: String,
-      required: false
-    },
-    description: {
-      type: String,
-      required: false
-    }
-  }],
+  tasks: [taskSchema],
   items: [{
     name: {
       type: String,
