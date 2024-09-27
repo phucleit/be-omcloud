@@ -63,6 +63,10 @@ const reportschema = new mongoose.Schema({
   customer_comment: {
     type: String
   },
+  status: {
+    type: Number,
+    default: 1
+  },
 }, {timestamps: true});
 
 const Reports = mongoose.model("Reports", reportschema);
