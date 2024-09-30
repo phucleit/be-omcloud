@@ -24,14 +24,14 @@ const reportsController = {
         customer_comment
       } = req.body;
 
-      const count = await Reports.countDocuments({
-        $or: [
-          { code: code },
-          { name: name }
-        ]
-      });
+      // const count = await Reports.countDocuments({
+      //   $or: [
+      //     { code: code },
+      //     { name: name }
+      //   ]
+      // });
   
-      if (count > 0) throw new Error(`Mã hiệu hoặc tên báo cáo đã được tạo!`);
+      // if (count > 0) throw new Error(`Mã hiệu hoặc tên báo cáo đã được tạo!`);
   
       if (Array.isArray(tasks)) {
         await Promise.all(tasks.map(async (task) => {
@@ -110,6 +110,22 @@ const reportsController = {
     } catch(err) {
       console.error(err);
       return res.status(500).send(err.message);
+    }
+  },
+
+  getReportByProjectId: async(req, res) => {
+    try {
+      const project_id = req.params.id;
+      const report = await Reports
+        .find({
+          project_id: project_id
+        })
+        .sort({"createdAt": -1})
+        .populate('project_id');
+      return res.status(200).json(report);
+    } catch(err) {
+      console.error(err);
+      return reportsController.status(500).send(err.message);
     }
   },
 }
