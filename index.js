@@ -46,13 +46,13 @@ app.use(bodyParser.json({limit: "500mb"}));
 app.use(bodyParser.urlencoded({extended:true, limit:'500mb'})); 
 
 const corsOptions = {
-	origin: 'http://localhost:3056',
-  methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
-  credentials: true,
-	optionsSuccessStatus: 200,
-  // origin: 'https://dms.om.himep.vn',
+	// origin: 'http://localhost:3056',
+  // methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
   // credentials: true,
-  // optionsSuccessStatus: 200,
+	// optionsSuccessStatus: 200,
+  origin: 'https://dms.om.himep.vn',
+  credentials: true,
+  optionsSuccessStatus: 200,
 };
 
 app.use(cors(corsOptions));
