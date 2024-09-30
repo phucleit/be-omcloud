@@ -7,5 +7,6 @@ router.get("/", reportsController.getReports);
 router.get("/:id", reportsController.getDetailReports);
 router.delete("/:id",reportsController.deleteReports);
 router.get("/project/:id", reportsController.getReportByProjectId);
+router.put("/status/:id", reportsController.updateStatusReport);
 
 module.exports = router;

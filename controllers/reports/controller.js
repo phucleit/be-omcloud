@@ -1,4 +1,5 @@
 const Reports = require("../../models/reports/model");
+const Projects = require("../../models/projects/model");
 const logAction = require("../../middleware/action_logs");
 
 const path = require('path');
@@ -125,7 +126,31 @@ const reportsController = {
       return res.status(200).json(report);
     } catch(err) {
       console.error(err);
-      return reportsController.status(500).send(err.message);
+      return res.status(500).send(err.message);
+    }
+  },
+
+  updateStatusReport: async(req, res) => {
+    try {
+      const project_id = req.params.id;
+      const [
+        report,
+        report_update
+      ] = await Promise.all([
+        Reports.find({
+          project_id: project_id
+        })
+        .sort({"createdAt": -1}),
+        Reports.updateMany({project_id: project_id}, {
+          $set: {
+            status: 2
+          }      
+        })
+      ]);
+      return res.status(200).json(report);
+    } catch(err) {
+      console.error(err);
+      return res.status(500).send(err.message);
     }
   },
 }
