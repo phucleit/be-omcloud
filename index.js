@@ -50,7 +50,7 @@ const corsOptions = {
   // methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
   // credentials: true,
 	// optionsSuccessStatus: 200,
-  origin: 'https://dms.om.himep.vn',
+  origin: 'https://om.himep.vn',
   credentials: true,
   optionsSuccessStatus: 200,
 };
